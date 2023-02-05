@@ -1,0 +1,135 @@
+{
+    "data": [
+        {
+            "traceID": "75ec3383fc62d00e",
+            "spans": [
+                {
+                    "traceID": "75ec3383fc62d00e",
+                    "spanID": "4ff683012176dd49",
+                    "flags": 1,
+                    "operationName": "queryByService",
+                    "references": [
+                        {
+                            "refType": "CHILD_OF",
+                            "traceID": "75ec3383fc62d00e",
+                            "spanID": "75ec3383fc62d00e"
+                        }
+                    ],
+                    "startTime": 1675455073264798,
+                    "duration": 4300,
+                    "tags": [
+                        {
+                            "key": "db.statement",
+                            "type": "string",
+                            "value": "\n\t\tSELECT trace_id\n\t\tFROM service_name_index\n\t\tWHERE bucket IN (0,1,2,3,4,5,6,7,8,9) AND service_name = ? AND start_time \u003e ? AND start_time \u003c ?\n\t\tORDER BY start_time DESC\n\t\tLIMIT ?"
+                        },
+                        {
+                            "key": "db.type",
+                            "type": "string",
+                            "value": "cassandra"
+                        },
+                        {
+                            "key": "component",
+                            "type": "string",
+                            "value": "gocql"
+                        },
+                        {
+                            "key": "internal.span.format",
+                            "type": "string",
+                            "value": "proto"
+                        }
+                    ],
+                    "logs": [],
+                    "processID": "p1",
+                    "warnings": null
+                },
+                {
+                    "traceID": "75ec3383fc62d00e",
+                    "spanID": "75ec3383fc62d00e",
+                    "flags": 1,
+                    "operationName": "/api/traces",
+                    "references": [],
+                    "startTime": 1675455073264743,
+                    "duration": 5685,
+                    "tags": [
+                        {
+                            "key": "sampler.type",
+                            "type": "string",
+                            "value": "const"
+                        },
+                        {
+                            "key": "sampler.param",
+                            "type": "bool",
+                            "value": true
+                        },
+                        {
+                            "key": "span.kind",
+                            "type": "string",
+                            "value": "server"
+                        },
+                        {
+                            "key": "http.method",
+                            "type": "string",
+                            "value": "GET"
+                        },
+                        {
+                            "key": "http.url",
+                            "type": "string",
+                            "value": "/api/traces?end=1675455263767000\u0026limit=20\u0026lookback=1h\u0026maxDuration\u0026minDuration\u0026service=my-service\u0026start=1675451663767000"
+                        },
+                        {
+                            "key": "component",
+                            "type": "string",
+                            "value": "net/http"
+                        },
+                        {
+                            "key": "http.status_code",
+                            "type": "int64",
+                            "value": 200
+                        },
+                        {
+                            "key": "internal.span.format",
+                            "type": "string",
+                            "value": "proto"
+                        }
+                    ],
+                    "logs": [],
+                    "processID": "p1",
+                    "warnings": null
+                }
+            ],
+            "processes": {
+                "p1": {
+                    "serviceName": "jaeger-query",
+                    "tags": [
+                        {
+                            "key": "client-uuid",
+                            "type": "string",
+                            "value": "68bbe1a2b4adc57e"
+                        },
+                        {
+                            "key": "hostname",
+                            "type": "string",
+                            "value": "jaeger-query-6555858bd6-zgzvv"
+                        },
+                        {
+                            "key": "ip",
+                            "type": "string",
+                            "value": "10.42.1.8"
+                        },
+                        {
+                            "key": "jaeger.version",
+                            "type": "string",
+                            "value": "Go-2.30.0"
+                        }
+                    ]
+                }
+            },
+            "warnings": null
+        }
+    ],
+    "total": 0,
+    "limit": 0,
+    "offset": 0,
+    "errors": null
+}

@@ -1,0 +1,15 @@
+-------------------------------Initialize Cluster--------------------------
+1) Install cert-manager
+- kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.11.0/cert-manager.yaml
+
+2) Install cassandra
+- kubectl apply -f cassadnrapv.yaml 
+- kubectl apply -f https://k8s.io/examples/application/cassandra/cassandra-service.yaml
+- kubectl apply -f cassandra-statefulset.yaml
+
+3) Install Jaegar
+- kubectl create namespace observability
+
+---------------------------------------------------------------------------
+helm install jaeger jaegertracing/jaeger
+- This helm installment just worked out of the box with DC and rack values unchanged. 

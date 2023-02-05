@@ -1,0 +1,151 @@
+{
+    "data": [
+        {
+            "traceID": "713449f6b0fac4c6",
+            "spans": [
+                {
+                    "traceID": "713449f6b0fac4c6",
+                    "spanID": "2935beef01fe14b9",
+                    "flags": 1,
+                    "operationName": "readTrace",
+                    "references": [
+                        {
+                            "refType": "CHILD_OF",
+                            "traceID": "713449f6b0fac4c6",
+                            "spanID": "713449f6b0fac4c6"
+                        }
+                    ],
+                    "startTime": 1675454469869857,
+                    "duration": 2511,
+                    "tags": [
+                        {
+                            "key": "db.statement",
+                            "type": "string",
+                            "value": "\n\t\tSELECT trace_id, span_id, parent_id, operation_name, flags, start_time, duration, tags, logs, refs, process\n\t\tFROM traces\n\t\tWHERE trace_id = ?"
+                        },
+                        {
+                            "key": "db.type",
+                            "type": "string",
+                            "value": "cassandra"
+                        },
+                        {
+                            "key": "component",
+                            "type": "string",
+                            "value": "gocql"
+                        },
+                        {
+                            "key": "internal.span.format",
+                            "type": "string",
+                            "value": "proto"
+                        }
+                    ],
+                    "logs": [
+                        {
+                            "timestamp": 1675454469869865,
+                            "fields": [
+                                {
+                                    "key": "event",
+                                    "type": "string",
+                                    "value": "searching"
+                                },
+                                {
+                                    "key": "trace_id",
+                                    "type": "string",
+                                    "value": "5bb9600200ab1538"
+                                }
+                            ]
+                        }
+                    ],
+                    "processID": "p1",
+                    "warnings": null
+                },
+                {
+                    "traceID": "713449f6b0fac4c6",
+                    "spanID": "713449f6b0fac4c6",
+                    "flags": 1,
+                    "operationName": "/api/traces/{traceID}",
+                    "references": [],
+                    "startTime": 1675454469869776,
+                    "duration": 2833,
+                    "tags": [
+                        {
+                            "key": "sampler.type",
+                            "type": "string",
+                            "value": "const"
+                        },
+                        {
+                            "key": "sampler.param",
+                            "type": "bool",
+                            "value": true
+                        },
+                        {
+                            "key": "span.kind",
+                            "type": "string",
+                            "value": "server"
+                        },
+                        {
+                            "key": "http.method",
+                            "type": "string",
+                            "value": "GET"
+                        },
+                        {
+                            "key": "http.url",
+                            "type": "string",
+                            "value": "/api/traces/5bb9600200ab1538?prettyPrint=true"
+                        },
+                        {
+                            "key": "component",
+                            "type": "string",
+                            "value": "net/http"
+                        },
+                        {
+                            "key": "http.status_code",
+                            "type": "int64",
+                            "value": 200
+                        },
+                        {
+                            "key": "internal.span.format",
+                            "type": "string",
+                            "value": "proto"
+                        }
+                    ],
+                    "logs": [],
+                    "processID": "p1",
+                    "warnings": null
+                }
+            ],
+            "processes": {
+                "p1": {
+                    "serviceName": "jaeger-query",
+                    "tags": [
+                        {
+                            "key": "client-uuid",
+                            "type": "string",
+                            "value": "68bbe1a2b4adc57e"
+                        },
+                        {
+                            "key": "hostname",
+                            "type": "string",
+                            "value": "jaeger-query-6555858bd6-zgzvv"
+                        },
+                        {
+                            "key": "ip",
+                            "type": "string",
+                            "value": "10.42.1.8"
+                        },
+                        {
+                            "key": "jaeger.version",
+                            "type": "string",
+                            "value": "Go-2.30.0"
+                        }
+                    ]
+                }
+            },
+            "warnings": null
+        }
+    ],
+    "total": 0,
+    "limit": 0,
+    "offset": 0,
+    "errors": null
+}

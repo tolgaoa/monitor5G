@@ -1,0 +1,95 @@
+{
+    "data": [
+        {
+            "traceID": "50f754951e5eb287",
+            "spans": [
+                {
+                    "traceID": "50f754951e5eb287",
+                    "spanID": "50f754951e5eb287",
+                    "flags": 1,
+                    "operationName": "/api/services/{service}/operations",
+                    "references": [],
+                    "startTime": 1675455086191542,
+                    "duration": 3181,
+                    "tags": [
+                        {
+                            "key": "sampler.type",
+                            "type": "string",
+                            "value": "const"
+                        },
+                        {
+                            "key": "sampler.param",
+                            "type": "bool",
+                            "value": true
+                        },
+                        {
+                            "key": "span.kind",
+                            "type": "string",
+                            "value": "server"
+                        },
+                        {
+                            "key": "http.method",
+                            "type": "string",
+                            "value": "GET"
+                        },
+                        {
+                            "key": "http.url",
+                            "type": "string",
+                            "value": "/api/services/jaeger-query/operations"
+                        },
+                        {
+                            "key": "component",
+                            "type": "string",
+                            "value": "net/http"
+                        },
+                        {
+                            "key": "http.status_code",
+                            "type": "int64",
+                            "value": 200
+                        },
+                        {
+                            "key": "internal.span.format",
+                            "type": "string",
+                            "value": "proto"
+                        }
+                    ],
+                    "logs": [],
+                    "processID": "p1",
+                    "warnings": null
+                }
+            ],
+            "processes": {
+                "p1": {
+                    "serviceName": "jaeger-query",
+                    "tags": [
+                        {
+                            "key": "client-uuid",
+                            "type": "string",
+                            "value": "68bbe1a2b4adc57e"
+                        },
+                        {
+                            "key": "hostname",
+                            "type": "string",
+                            "value": "jaeger-query-6555858bd6-zgzvv"
+                        },
+                        {
+                            "key": "ip",
+                            "type": "string",
+                            "value": "10.42.1.8"
+                        },
+                        {
+                            "key": "jaeger.version",
+                            "type": "string",
+                            "value": "Go-2.30.0"
+                        }
+                    ]
+                }
+            },
+            "warnings": null
+        }
+    ],
+    "total": 0,
+    "limit": 0,
+    "offset": 0,
+    "errors": null
+}
