@@ -1,72 +1,16 @@
 {
     "data": [
         {
-            "traceID": "5c0e2c9d4fbec82f",
+            "traceID": "32df52e0f22c1b48",
             "spans": [
                 {
-                    "traceID": "5c0e2c9d4fbec82f",
-                    "spanID": "15703de7bbdb7013",
-                    "flags": 1,
-                    "operationName": "readTrace",
-                    "references": [
-                        {
-                            "refType": "CHILD_OF",
-                            "traceID": "5c0e2c9d4fbec82f",
-                            "spanID": "5c0e2c9d4fbec82f"
-                        }
-                    ],
-                    "startTime": 1675454469857357,
-                    "duration": 3562,
-                    "tags": [
-                        {
-                            "key": "db.statement",
-                            "type": "string",
-                            "value": "\n\t\tSELECT trace_id, span_id, parent_id, operation_name, flags, start_time, duration, tags, logs, refs, process\n\t\tFROM traces\n\t\tWHERE trace_id = ?"
-                        },
-                        {
-                            "key": "db.type",
-                            "type": "string",
-                            "value": "cassandra"
-                        },
-                        {
-                            "key": "component",
-                            "type": "string",
-                            "value": "gocql"
-                        },
-                        {
-                            "key": "internal.span.format",
-                            "type": "string",
-                            "value": "proto"
-                        }
-                    ],
-                    "logs": [
-                        {
-                            "timestamp": 1675454469857365,
-                            "fields": [
-                                {
-                                    "key": "event",
-                                    "type": "string",
-                                    "value": "searching"
-                                },
-                                {
-                                    "key": "trace_id",
-                                    "type": "string",
-                                    "value": "4b4cee749d1f1a0e"
-                                }
-                            ]
-                        }
-                    ],
-                    "processID": "p1",
-                    "warnings": null
-                },
-                {
-                    "traceID": "5c0e2c9d4fbec82f",
-                    "spanID": "5c0e2c9d4fbec82f",
+                    "traceID": "32df52e0f22c1b48",
+                    "spanID": "32df52e0f22c1b48",
                     "flags": 1,
                     "operationName": "/api/traces/{traceID}",
                     "references": [],
-                    "startTime": 1675454469857207,
-                    "duration": 4260,
+                    "startTime": 1675560107126186,
+                    "duration": 2238,
                     "tags": [
                         {
                             "key": "sampler.type",
@@ -91,7 +35,7 @@
                         {
                             "key": "http.url",
                             "type": "string",
-                            "value": "/api/traces/4b4cee749d1f1a0e?prettyPrint=true"
+                            "value": "/api/traces/c2b0921e29943357?prettyPrint=true"
                         },
                         {
                             "key": "component",
@@ -101,7 +45,7 @@
                         {
                             "key": "http.status_code",
                             "type": "int64",
-                            "value": 200
+                            "value": 404
                         },
                         {
                             "key": "internal.span.format",
@@ -110,6 +54,77 @@
                         }
                     ],
                     "logs": [],
+                    "processID": "p1",
+                    "warnings": null
+                },
+                {
+                    "traceID": "32df52e0f22c1b48",
+                    "spanID": "54793cf98667947a",
+                    "flags": 1,
+                    "operationName": "readTrace",
+                    "references": [
+                        {
+                            "refType": "CHILD_OF",
+                            "traceID": "32df52e0f22c1b48",
+                            "spanID": "32df52e0f22c1b48"
+                        }
+                    ],
+                    "startTime": 1675560107126218,
+                    "duration": 2175,
+                    "tags": [
+                        {
+                            "key": "db.statement",
+                            "type": "string",
+                            "value": "\n\t\tSELECT trace_id, span_id, parent_id, operation_name, flags, start_time, duration, tags, logs, refs, process\n\t\tFROM traces\n\t\tWHERE trace_id = ?"
+                        },
+                        {
+                            "key": "db.type",
+                            "type": "string",
+                            "value": "cassandra"
+                        },
+                        {
+                            "key": "component",
+                            "type": "string",
+                            "value": "gocql"
+                        },
+                        {
+                            "key": "error",
+                            "type": "bool",
+                            "value": true
+                        },
+                        {
+                            "key": "internal.span.format",
+                            "type": "string",
+                            "value": "proto"
+                        }
+                    ],
+                    "logs": [
+                        {
+                            "timestamp": 1675560107126226,
+                            "fields": [
+                                {
+                                    "key": "event",
+                                    "type": "string",
+                                    "value": "searching"
+                                },
+                                {
+                                    "key": "trace_id",
+                                    "type": "string",
+                                    "value": "c2b0921e29943357"
+                                }
+                            ]
+                        },
+                        {
+                            "timestamp": 1675560107128391,
+                            "fields": [
+                                {
+                                    "key": "error.object",
+                                    "type": "string",
+                                    "value": "trace not found"
+                                }
+                            ]
+                        }
+                    ],
                     "processID": "p1",
                     "warnings": null
                 }

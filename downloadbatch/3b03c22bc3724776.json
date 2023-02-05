@@ -1,16 +1,16 @@
 {
     "data": [
         {
-            "traceID": "50f754951e5eb287",
+            "traceID": "3b03c22bc3724776",
             "spans": [
                 {
-                    "traceID": "50f754951e5eb287",
-                    "spanID": "50f754951e5eb287",
+                    "traceID": "3b03c22bc3724776",
+                    "spanID": "3b03c22bc3724776",
                     "flags": 1,
                     "operationName": "/api/services/{service}/operations",
                     "references": [],
-                    "startTime": 1675455086191542,
-                    "duration": 3181,
+                    "startTime": 1675560122912244,
+                    "duration": 4990,
                     "tags": [
                         {
                             "key": "sampler.type",
@@ -35,7 +35,7 @@
                         {
                             "key": "http.url",
                             "type": "string",
-                            "value": "/api/services/jaeger-query/operations"
+                            "value": "/api/services/test-service/operations"
                         },
                         {
                             "key": "component",

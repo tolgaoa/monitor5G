@@ -1,16 +1,72 @@
 {
     "data": [
         {
-            "traceID": "220ad9f8b632c906",
+            "traceID": "4d7f33d5ad47faa7",
             "spans": [
                 {
-                    "traceID": "220ad9f8b632c906",
-                    "spanID": "220ad9f8b632c906",
+                    "traceID": "4d7f33d5ad47faa7",
+                    "spanID": "2c2a21122d331eda",
                     "flags": 1,
-                    "operationName": "/api/services/{service}/operations",
+                    "operationName": "readTrace",
+                    "references": [
+                        {
+                            "refType": "CHILD_OF",
+                            "traceID": "4d7f33d5ad47faa7",
+                            "spanID": "4d7f33d5ad47faa7"
+                        }
+                    ],
+                    "startTime": 1675561084825752,
+                    "duration": 2175,
+                    "tags": [
+                        {
+                            "key": "db.statement",
+                            "type": "string",
+                            "value": "\n\t\tSELECT trace_id, span_id, parent_id, operation_name, flags, start_time, duration, tags, logs, refs, process\n\t\tFROM traces\n\t\tWHERE trace_id = ?"
+                        },
+                        {
+                            "key": "db.type",
+                            "type": "string",
+                            "value": "cassandra"
+                        },
+                        {
+                            "key": "component",
+                            "type": "string",
+                            "value": "gocql"
+                        },
+                        {
+                            "key": "internal.span.format",
+                            "type": "string",
+                            "value": "proto"
+                        }
+                    ],
+                    "logs": [
+                        {
+                            "timestamp": 1675561084825759,
+                            "fields": [
+                                {
+                                    "key": "event",
+                                    "type": "string",
+                                    "value": "searching"
+                                },
+                                {
+                                    "key": "trace_id",
+                                    "type": "string",
+                                    "value": "25231f09b353b767c2b0921e29943357"
+                                }
+                            ]
+                        }
+                    ],
+                    "processID": "p1",
+                    "warnings": null
+                },
+                {
+                    "traceID": "4d7f33d5ad47faa7",
+                    "spanID": "4d7f33d5ad47faa7",
+                    "flags": 1,
+                    "operationName": "/api/traces/{traceID}",
                     "references": [],
-                    "startTime": 1675455069651825,
-                    "duration": 5026,
+                    "startTime": 1675561084825675,
+                    "duration": 2565,
                     "tags": [
                         {
                             "key": "sampler.type",
@@ -35,7 +91,7 @@
                         {
                             "key": "http.url",
                             "type": "string",
-                            "value": "/api/services/jaeger-query/operations"
+                            "value": "/api/traces/25231f09b353b767c2b0921e29943357?prettyPrint=true"
                         },
                         {
                             "key": "component",

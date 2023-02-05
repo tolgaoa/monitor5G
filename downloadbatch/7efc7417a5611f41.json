@@ -1,16 +1,72 @@
 {
     "data": [
         {
-            "traceID": "6836163b180813a6",
+            "traceID": "7efc7417a5611f41",
             "spans": [
                 {
-                    "traceID": "6836163b180813a6",
-                    "spanID": "6836163b180813a6",
+                    "traceID": "7efc7417a5611f41",
+                    "spanID": "2af0bebc7d28ceb8",
                     "flags": 1,
-                    "operationName": "/api/services",
+                    "operationName": "readTrace",
+                    "references": [
+                        {
+                            "refType": "CHILD_OF",
+                            "traceID": "7efc7417a5611f41",
+                            "spanID": "7efc7417a5611f41"
+                        }
+                    ],
+                    "startTime": 1675561407875625,
+                    "duration": 2470,
+                    "tags": [
+                        {
+                            "key": "db.statement",
+                            "type": "string",
+                            "value": "\n\t\tSELECT trace_id, span_id, parent_id, operation_name, flags, start_time, duration, tags, logs, refs, process\n\t\tFROM traces\n\t\tWHERE trace_id = ?"
+                        },
+                        {
+                            "key": "db.type",
+                            "type": "string",
+                            "value": "cassandra"
+                        },
+                        {
+                            "key": "component",
+                            "type": "string",
+                            "value": "gocql"
+                        },
+                        {
+                            "key": "internal.span.format",
+                            "type": "string",
+                            "value": "proto"
+                        }
+                    ],
+                    "logs": [
+                        {
+                            "timestamp": 1675561407875633,
+                            "fields": [
+                                {
+                                    "key": "event",
+                                    "type": "string",
+                                    "value": "searching"
+                                },
+                                {
+                                    "key": "trace_id",
+                                    "type": "string",
+                                    "value": "e3126ea95bff82bc34a4ebb3924741f0"
+                                }
+                            ]
+                        }
+                    ],
+                    "processID": "p1",
+                    "warnings": null
+                },
+                {
+                    "traceID": "7efc7417a5611f41",
+                    "spanID": "7efc7417a5611f41",
+                    "flags": 1,
+                    "operationName": "/api/traces/{traceID}",
                     "references": [],
-                    "startTime": 1675455069651845,
-                    "duration": 10712,
+                    "startTime": 1675561407875547,
+                    "duration": 2842,
                     "tags": [
                         {
                             "key": "sampler.type",
@@ -35,7 +91,7 @@
                         {
                             "key": "http.url",
                             "type": "string",
-                            "value": "/api/services"
+                            "value": "/api/traces/e3126ea95bff82bc34a4ebb3924741f0?prettyPrint=true"
                         },
                         {
                             "key": "component",

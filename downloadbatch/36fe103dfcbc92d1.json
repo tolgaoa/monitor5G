@@ -1,22 +1,22 @@
 {
     "data": [
         {
-            "traceID": "5b1ccf9e633ed07a",
+            "traceID": "36fe103dfcbc92d1",
             "spans": [
                 {
-                    "traceID": "5b1ccf9e633ed07a",
-                    "spanID": "33f7918619a3bd33",
+                    "traceID": "36fe103dfcbc92d1",
+                    "spanID": "241f9efcc57dc0d5",
                     "flags": 1,
                     "operationName": "readTrace",
                     "references": [
                         {
                             "refType": "CHILD_OF",
-                            "traceID": "5b1ccf9e633ed07a",
-                            "spanID": "5b1ccf9e633ed07a"
+                            "traceID": "36fe103dfcbc92d1",
+                            "spanID": "36fe103dfcbc92d1"
                         }
                     ],
-                    "startTime": 1675454469864333,
-                    "duration": 2887,
+                    "startTime": 1675560745325478,
+                    "duration": 2265,
                     "tags": [
                         {
                             "key": "db.statement",
@@ -34,6 +34,11 @@
                             "value": "gocql"
                         },
                         {
+                            "key": "error",
+                            "type": "bool",
+                            "value": true
+                        },
+                        {
                             "key": "internal.span.format",
                             "type": "string",
                             "value": "proto"
@@ -41,7 +46,7 @@
                     ],
                     "logs": [
                         {
-                            "timestamp": 1675454469864341,
+                            "timestamp": 1675560745325485,
                             "fields": [
                                 {
                                     "key": "event",
@@ -51,7 +56,17 @@
                                 {
                                     "key": "trace_id",
                                     "type": "string",
-                                    "value": "39fb3e8258a06b2f"
+                                    "value": "363c53d41a3949e1"
+                                }
+                            ]
+                        },
+                        {
+                            "timestamp": 1675560745327741,
+                            "fields": [
+                                {
+                                    "key": "error.object",
+                                    "type": "string",
+                                    "value": "trace not found"
                                 }
                             ]
                         }
@@ -60,13 +75,13 @@
                     "warnings": null
                 },
                 {
-                    "traceID": "5b1ccf9e633ed07a",
-                    "spanID": "5b1ccf9e633ed07a",
+                    "traceID": "36fe103dfcbc92d1",
+                    "spanID": "36fe103dfcbc92d1",
                     "flags": 1,
                     "operationName": "/api/traces/{traceID}",
                     "references": [],
-                    "startTime": 1675454469864259,
-                    "duration": 3161,
+                    "startTime": 1675560745325421,
+                    "duration": 2373,
                     "tags": [
                         {
                             "key": "sampler.type",
@@ -91,7 +106,7 @@
                         {
                             "key": "http.url",
                             "type": "string",
-                            "value": "/api/traces/39fb3e8258a06b2f?prettyPrint=true"
+                            "value": "/api/traces/363c53d41a3949e1?prettyPrint=true"
                         },
                         {
                             "key": "component",
@@ -101,7 +116,7 @@
                         {
                             "key": "http.status_code",
                             "type": "int64",
-                            "value": 200
+                            "value": 404
                         },
                         {
                             "key": "internal.span.format",

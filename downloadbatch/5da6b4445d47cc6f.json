@@ -1,27 +1,27 @@
 {
     "data": [
         {
-            "traceID": "75ec3383fc62d00e",
+            "traceID": "5da6b4445d47cc6f",
             "spans": [
                 {
-                    "traceID": "75ec3383fc62d00e",
-                    "spanID": "4ff683012176dd49",
+                    "traceID": "5da6b4445d47cc6f",
+                    "spanID": "0176fcf6d47f3b2e",
                     "flags": 1,
-                    "operationName": "queryByService",
+                    "operationName": "readTrace",
                     "references": [
                         {
                             "refType": "CHILD_OF",
-                            "traceID": "75ec3383fc62d00e",
-                            "spanID": "75ec3383fc62d00e"
+                            "traceID": "5da6b4445d47cc6f",
+                            "spanID": "5da6b4445d47cc6f"
                         }
                     ],
-                    "startTime": 1675455073264798,
-                    "duration": 4300,
+                    "startTime": 1675560966492669,
+                    "duration": 2469,
                     "tags": [
                         {
                             "key": "db.statement",
                             "type": "string",
-                            "value": "\n\t\tSELECT trace_id\n\t\tFROM service_name_index\n\t\tWHERE bucket IN (0,1,2,3,4,5,6,7,8,9) AND service_name = ? AND start_time \u003e ? AND start_time \u003c ?\n\t\tORDER BY start_time DESC\n\t\tLIMIT ?"
+                            "value": "\n\t\tSELECT trace_id, span_id, parent_id, operation_name, flags, start_time, duration, tags, logs, refs, process\n\t\tFROM traces\n\t\tWHERE trace_id = ?"
                         },
                         {
                             "key": "db.type",
@@ -34,23 +34,54 @@
                             "value": "gocql"
                         },
                         {
+                            "key": "error",
+                            "type": "bool",
+                            "value": true
+                        },
+                        {
                             "key": "internal.span.format",
                             "type": "string",
                             "value": "proto"
                         }
                     ],
-                    "logs": [],
+                    "logs": [
+                        {
+                            "timestamp": 1675560966492677,
+                            "fields": [
+                                {
+                                    "key": "event",
+                                    "type": "string",
+                                    "value": "searching"
+                                },
+                                {
+                                    "key": "trace_id",
+                                    "type": "string",
+                                    "value": "34a4ebb3924741f0"
+                                }
+                            ]
+                        },
+                        {
+                            "timestamp": 1675560966495137,
+                            "fields": [
+                                {
+                                    "key": "error.object",
+                                    "type": "string",
+                                    "value": "trace not found"
+                                }
+                            ]
+                        }
+                    ],
                     "processID": "p1",
                     "warnings": null
                 },
                 {
-                    "traceID": "75ec3383fc62d00e",
-                    "spanID": "75ec3383fc62d00e",
+                    "traceID": "5da6b4445d47cc6f",
+                    "spanID": "5da6b4445d47cc6f",
                     "flags": 1,
-                    "operationName": "/api/traces",
+                    "operationName": "/api/traces/{traceID}",
                     "references": [],
-                    "startTime": 1675455073264743,
-                    "duration": 5685,
+                    "startTime": 1675560966492594,
+                    "duration": 2578,
                     "tags": [
                         {
                             "key": "sampler.type",
@@ -75,7 +106,7 @@
                         {
                             "key": "http.url",
                             "type": "string",
-                            "value": "/api/traces?end=1675455263767000\u0026limit=20\u0026lookback=1h\u0026maxDuration\u0026minDuration\u0026service=my-service\u0026start=1675451663767000"
+                            "value": "/api/traces/34a4ebb3924741f0?prettyPrint=true"
                         },
                         {
                             "key": "component",
@@ -85,7 +116,7 @@
                         {
                             "key": "http.status_code",
                             "type": "int64",
-                            "value": 200
+                            "value": 404
                         },
                         {
                             "key": "internal.span.format",
