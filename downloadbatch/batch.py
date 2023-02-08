@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import urllib3, shutil
 
 
-soup = BeautifulSoup(open("./Jaeger_UI2.html"), "html.parser")
+soup = BeautifulSoup(open("./Jaeger_UI.html"), "html.parser")
 
 tags = soup.find_all('a', {'class': 'ResultItemTitle--item ub-flex-auto'})
 

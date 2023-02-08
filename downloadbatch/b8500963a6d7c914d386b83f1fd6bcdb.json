@@ -1,15 +1,15 @@
 {
     "data": [
         {
-            "traceID": "e3126ea95bff82bc34a4ebb3924741f0",
+            "traceID": "b8500963a6d7c914d386b83f1fd6bcdb",
             "spans": [
                 {
-                    "traceID": "e3126ea95bff82bc34a4ebb3924741f0",
-                    "spanID": "e468ba0ce00d4905",
+                    "traceID": "b8500963a6d7c914d386b83f1fd6bcdb",
+                    "spanID": "9a7e8bc30c56c000",
                     "operationName": "Default",
                     "references": [],
-                    "startTime": 1675558508607052,
-                    "duration": 1000310,
+                    "startTime": 1675875422670268,
+                    "duration": 2006982,
                     "tags": [
                         {
                             "key": "otel.library.name",
@@ -24,7 +24,7 @@
                         {
                             "key": "http.method",
                             "type": "string",
-                            "value": "GET"
+                            "value": "POST"
                         },
                         {
                             "key": "http.scheme",
@@ -39,37 +39,27 @@
                         {
                             "key": "net.host.name",
                             "type": "string",
-                            "value": "localhost"
+                            "value": "10.42.1.12"
                         },
                         {
                             "key": "http.target",
                             "type": "string",
-                            "value": "/timedelay/test2"
-                        },
-                        {
-                            "key": "net.host.port",
-                            "type": "int64",
-                            "value": 7777
+                            "value": "/hello"
                         },
                         {
                             "key": "net.sock.peer.addr",
                             "type": "string",
-                            "value": "127.0.0.1"
+                            "value": "192.168.1.119"
                         },
                         {
                             "key": "net.sock.peer.port",
                             "type": "int64",
-                            "value": 50036
+                            "value": 15908
                         },
                         {
                             "key": "http.user_agent",
                             "type": "string",
-                            "value": "curl/7.58.0"
-                        },
-                        {
-                            "key": "http.wrote_bytes",
-                            "type": "int64",
-                            "value": 14
+                            "value": "curl/7.68.0"
                         },
                         {
                             "key": "http.status_code",
@@ -89,7 +79,7 @@
                     ],
                     "logs": [
                         {
-                            "timestamp": 1675558508607098,
+                            "timestamp": 1675875422670343,
                             "fields": [
                                 {
                                     "key": "event",
