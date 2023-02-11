@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sampleapp2
+  labels:
+    app: sampleapp2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sampleapp2
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: sampleapp2
+      annotations:
+        k8s.v1.cni.cncf.io/networks: ext-net2
+    spec:
+      initContainers:
+      - name: init-networking
+        image: tolgaomeratalay/init-networking:v5
+        securityContext:
+          capabilities:
+            add:
+            - NET_ADMIN
+          privileged: true
+      containers:
+      - name: service
+        image: tolgaomeratalay/dummyhttp:v4
+        ports:
+        - containerPort: 80
+        imagePullPolicy: IfNotPresent
+      - name: proxy
+        image: tolgaomeratalay/reverseproxy:v4
+        ports:
+        - containerPort: 11095
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      terminationGracePeriodSeconds: 30
