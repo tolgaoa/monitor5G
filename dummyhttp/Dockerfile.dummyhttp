@@ -13,4 +13,8 @@ ENV PATH="$PATH:/usr/local/go/bin"
 COPY ./* /usr/src/
 WORKDIR /usr/src/
 
-CMD ["sleep", "infinity"]
+RUN go build -o app 
+
+ENTRYPOINT [ "/bin/bash", "-l", "-c" ]
+CMD ["./app"]
+#CMD ["sleep", "infinity"]

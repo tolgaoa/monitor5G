@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sampleapp
+  labels:
+    app: sampleapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sampleapp
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: sampleapp
+    spec:
+      initContainers:
+      - name: init-networking
+        image: tolgaomeratalay/init-networking:v5
+        securityContext:
+          capabilities:
+            add:
+            - NET_ADMIN
+          privileged: true
+      containers:
+      - name: service
+        image: tolgaomeratalay/dummyhttp:v7
+        ports:
+        - containerPort: 80
+        imagePullPolicy: IfNotPresent
+      - name: proxy
+        image: tolgaomeratalay/reverseproxy:v10
+        securityContext:
+          privileged: true
+        ports:
+        - containerPort: 11095
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      terminationGracePeriodSeconds: 30

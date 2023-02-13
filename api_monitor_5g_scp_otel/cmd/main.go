@@ -51,7 +51,8 @@ func initTracer() (func(context.Context) error, error) {
 
 	ctx, cancel := context.WithTimeout(ctx, time.Second)
 	defer cancel()
-	conn, err := grpc.DialContext(ctx, "10.42.0.14:4317",
+	//conn, err := grpc.DialContext(ctx, "10.42.0.14:4317",
+	conn, err := grpc.DialContext(ctx, "otel-collector-daemonset-collector.otel-collector.svc.cluster.local:4317",
 		// Note the use of insecure transport here. TLS is recommended in production.
 		grpc.WithTransportCredentials(insecure.NewCredentials()),
 		grpc.WithBlock(),

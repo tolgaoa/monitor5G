@@ -12,6 +12,7 @@ ENV PATH="$PATH:/usr/local/go/bin"
 
 COPY ./* /usr/src/
 WORKDIR /usr/src/
+RUN go build -o app
 
 RUN adduser proxyop -u 1005 --gecos "proxy op, , , " --disabled-password
 USER proxyop
@@ -19,5 +20,5 @@ USER proxyop
 ENV PATH="$PATH:/usr/local/go/bin"
 WORKDIR /usr/src/
 
-
-CMD ["sleep", "infinity"]
+ENTRYPOINT [ "/bin/bash", "-l", "-c" ]
+CMD ["./app"]

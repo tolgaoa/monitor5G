@@ -14,5 +14,5 @@
 A) Directly deploy Jaeger through helm
 
 helm repo add jaegertracing https://jaegertracing.github.io/helm-charts
-helm install jaeger jaegertracing/jaeger
+helm install jaeger jaegertracing/jaeger -n jaeger
 - This helm installment just worked out of the box with DC and rack values unchanged. 
