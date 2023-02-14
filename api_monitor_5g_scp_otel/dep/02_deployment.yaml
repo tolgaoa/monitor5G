@@ -18,6 +18,8 @@ spec:
       annotations:
         k8s.v1.cni.cncf.io/networks: ext-net2
     spec:
+      nodeSelector:
+        type: run
       initContainers:
       - name: init-networking
         image: tolgaomeratalay/init-networking:v5
@@ -28,12 +30,12 @@ spec:
           privileged: true
       containers:
       - name: service
-        image: tolgaomeratalay/dummyhttp:v4
+        image: tolgaomeratalay/dummyhttp:v7
         ports:
         - containerPort: 80
         imagePullPolicy: IfNotPresent
       - name: proxy
-        image: tolgaomeratalay/reverseproxy:v4
+        image: tolgaomeratalay/reverseproxy:v10
         ports:
         - containerPort: 11095
       dnsPolicy: ClusterFirst

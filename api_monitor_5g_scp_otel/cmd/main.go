@@ -9,6 +9,7 @@ import (
 	"time"
 	"net/http"
 	"io"
+	"os"
 	"strings"
 	"strconv"
 
@@ -42,7 +43,7 @@ func initTracer() (func(context.Context) error, error) {
 	res, err := resource.New(ctx,
 		resource.WithAttributes(
 			// the service name used to display traces in backends
-			semconv.ServiceNameKey.String("test-service"),
+			semconv.ServiceNameKey.String(os.Getenv("SERVICENAME")),
 		),
 	)
 	if err != nil {
@@ -109,7 +110,9 @@ func forwardRequest(req *http.Request) (*http.Response, time.Duration, error) {
         intUrl := strings.Replace(incUrl, strconv.Itoa(proxyPort), strconv.Itoa(servicePort), 1)
 
         // Print the original URL and the proxied request URL.
-        log.Printf("\nIncoming URL: %s\nForward URL: %s\nMethod: %s", incUrl, intUrl, req.Method)
+        bodyBytes, err := io.ReadAll(req.Body)
+        bodyString := string(bodyBytes)
+        log.Printf("\nIncoming URL: %s\nForward URL: %s\nMethod: %s\nBody: %s", incUrl, intUrl, req.Method, bodyString)
 
         // Create an HTTP client and a proxy request based on the original request.
         httpClient := http.Client{}
