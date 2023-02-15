@@ -20,5 +20,6 @@ USER proxyop
 ENV PATH="$PATH:/usr/local/go/bin"
 WORKDIR /usr/src/
 
-ENTRYPOINT [ "/bin/bash", "-l", "-c" ]
-CMD ["./app"]
+#ENTRYPOINT [ "su", "proxyop", "/bin/bash", "-l", "-c" ]
+CMD ["su", "proxyop", "-c", "./app"]
+
