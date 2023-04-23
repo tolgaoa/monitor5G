@@ -1,0 +1,109 @@
+{
+    "data": [
+        {
+            "traceID": "b38fabcf660a21577be5b9ad8cc05bfd",
+            "spans": [
+                {
+                    "traceID": "b38fabcf660a21577be5b9ad8cc05bfd",
+                    "spanID": "814a93a31788ecdc",
+                    "operationName": "Default",
+                    "references": [],
+                    "startTime": 1678511759310297,
+                    "duration": 2184,
+                    "tags": [
+                        {
+                            "key": "otel.library.name",
+                            "type": "string",
+                            "value": "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
+                        },
+                        {
+                            "key": "otel.library.version",
+                            "type": "string",
+                            "value": "semver:0.38.0"
+                        },
+                        {
+                            "key": "http.method",
+                            "type": "string",
+                            "value": "GET"
+                        },
+                        {
+                            "key": "http.scheme",
+                            "type": "string",
+                            "value": "http"
+                        },
+                        {
+                            "key": "http.flavor",
+                            "type": "string",
+                            "value": "1.1"
+                        },
+                        {
+                            "key": "net.host.name",
+                            "type": "string",
+                            "value": "10.100.11.10"
+                        },
+                        {
+                            "key": "http.target",
+                            "type": "string",
+                            "value": "/nnrf-disc/v1/nf-instances?target-nf-type=SMF\u0026requester-nf-type=AMF"
+                        },
+                        {
+                            "key": "net.sock.peer.addr",
+                            "type": "string",
+                            "value": "10.100.15.10"
+                        },
+                        {
+                            "key": "net.sock.peer.port",
+                            "type": "int64",
+                            "value": 48940
+                        },
+                        {
+                            "key": "http.status_code",
+                            "type": "int64",
+                            "value": 200
+                        },
+                        {
+                            "key": "span.kind",
+                            "type": "string",
+                            "value": "server"
+                        },
+                        {
+                            "key": "internal.span.format",
+                            "type": "string",
+                            "value": "proto"
+                        }
+                    ],
+                    "logs": [
+                        {
+                            "timestamp": 1678511759310347,
+                            "fields": [
+                                {
+                                    "key": "event",
+                                    "type": "string",
+                                    "value": "handling this..."
+                                },
+                                {
+                                    "key": "username",
+                                    "type": "string",
+                                    "value": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "processID": "p1",
+                    "warnings": null
+                }
+            ],
+            "processes": {
+                "p1": {
+                    "serviceName": "amf1",
+                    "tags": []
+                }
+            },
+            "warnings": null
+        }
+    ],
+    "total": 0,
+    "limit": 0,
+    "offset": 0,
+    "errors": null
+}

@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "traceID": "8ee3b006d5e0276540e1b41bfb5d15ac",
+            "spans": [
+                {
+                    "traceID": "8ee3b006d5e0276540e1b41bfb5d15ac",
+                    "spanID": "74c57db2565e843f",
+                    "operationName": "Default",
+                    "references": [],
+                    "startTime": 1678511755227372,
+                    "duration": 48784,
+                    "tags": [
+                        {
+                            "key": "otel.library.name",
+                            "type": "string",
+                            "value": "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
+                        },
+                        {
+                            "key": "otel.library.version",
+                            "type": "string",
+                            "value": "semver:0.38.0"
+                        },
+                        {
+                            "key": "http.method",
+                            "type": "string",
+                            "value": "POST"
+                        },
+                        {
+                            "key": "http.scheme",
+                            "type": "string",
+                            "value": "http"
+                        },
+                        {
+                            "key": "http.flavor",
+                            "type": "string",
+                            "value": "1.1"
+                        },
+                        {
+                            "key": "net.host.name",
+                            "type": "string",
+                            "value": "10.100.14.10"
+                        },
+                        {
+                            "key": "http.target",
+                            "type": "string",
+                            "value": "/nausf-auth/v1/ue-authentications"
+                        },
+                        {
+                            "key": "net.sock.peer.addr",
+                            "type": "string",
+                            "value": "10.100.15.10"
+                        },
+                        {
+                            "key": "net.sock.peer.port",
+                            "type": "int64",
+                            "value": 39518
+                        },
+                        {
+                            "key": "http.read_bytes",
+                            "type": "int64",
+                            "value": 88
+                        },
+                        {
+                            "key": "http.status_code",
+                            "type": "int64",
+                            "value": 201
+                        },
+                        {
+                            "key": "span.kind",
+                            "type": "string",
+                            "value": "server"
+                        },
+                        {
+                            "key": "internal.span.format",
+                            "type": "string",
+                            "value": "proto"
+                        }
+                    ],
+                    "logs": [
+                        {
+                            "timestamp": 1678511755227403,
+                            "fields": [
+                                {
+                                    "key": "event",
+                                    "type": "string",
+                                    "value": "handling this..."
+                                },
+                                {
+                                    "key": "username",
+                                    "type": "string",
+                                    "value": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "processID": "p1",
+                    "warnings": null
+                }
+            ],
+            "processes": {
+                "p1": {
+                    "serviceName": "amf1",
+                    "tags": []
+                }
+            },
+            "warnings": null
+        }
+    ],
+    "total": 0,
+    "limit": 0,
+    "offset": 0,
+    "errors": null
+}

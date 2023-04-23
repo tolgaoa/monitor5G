@@ -11,7 +11,7 @@ def download_json(url):
     searcht = "trace/"
     tracei = url.rindex(searcht)    
     crop = tracei - len(url) + len(searcht)
-    json_url = 'http://10.42.1.8:16686/api/traces/' + url[crop::] + '?prettyPrint=true'
+    json_url = 'http://10.42.0.14:16686/api/traces/' + url[crop::] + '?prettyPrint=true'
     http = urllib3.PoolManager()
 
     path = url[crop::] + '.json'

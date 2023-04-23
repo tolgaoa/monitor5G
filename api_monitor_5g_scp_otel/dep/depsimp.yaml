@@ -16,26 +16,22 @@ spec:
       labels:
         app: sampleapp
     spec:
-      initContainers:
-      - name: init-networking
-        image: tolgaomeratalay/init-networking:v5
+      securityContext:
+        runAsUser: 0
+        runAsGroup: 0
+      containers:
+      - name: proxy
+        image: tolgaomeratalay/reverseproxy:v1.2
         securityContext:
           capabilities:
             add:
             - NET_ADMIN
           privileged: true
-      containers:
-      - name: service
-        image: tolgaomeratalay/dummyhttp:v7
-        ports:
-        - containerPort: 80
-        imagePullPolicy: IfNotPresent
-      - name: proxy
-        image: tolgaomeratalay/reverseproxy:v10
-        securityContext:
-          privileged: true
         ports:
         - containerPort: 11095
+        env:
+        - name: SERVICENAME
+          value: "test"
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler

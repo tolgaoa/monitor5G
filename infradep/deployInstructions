@@ -1,4 +1,4 @@
--------------------------------Initialize Cluster--------------------------
+------------------------------Initialize Cluster--------------------------
 1) Install cert-manager
 - kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.11.0/cert-manager.yaml
 
@@ -11,8 +11,19 @@
 - kubectl create namespace observability
 
 ---------------------------------------------------------------------------
+
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.11.0/cert-manager.yaml
+
 A) Directly deploy Jaeger through helm
 
 helm repo add jaegertracing https://jaegertracing.github.io/helm-charts
+kubectl create ns jaeger --> need to create the namespace
 helm install jaeger jaegertracing/jaeger -n jaeger
 - This helm installment just worked out of the box with DC and rack values unchanged. 
+
+helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm-charts
+kubectl create namespace opentelemetry-operator-system
+helm install --namespace opentelemetry-operator-system my-opentelemetry-operator open-telemetry/opentelemetry-operator
+
+kubectl create ns otel-collector
+

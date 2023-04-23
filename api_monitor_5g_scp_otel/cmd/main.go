@@ -1,18 +1,19 @@
 package main
 
 import (
-	"context"
-	"fmt"
-	"log"
-	//"os"
-	//"os/signal"
-	"time"
-	"net/http"
-	"io"
-	"os"
-	"strings"
-	"strconv"
-
+        "context"
+        "fmt"
+        "log"
+        //"os"
+        //"os/signal"
+        "time"
+        "net/http"
+        "io"
+        "os"
+        "strings"
+        "strconv"
+        "io/ioutil"
+        "bytes"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 
@@ -30,7 +31,7 @@ import (
 
 const (
         proxyPort   = 11095
-        servicePort = 80
+        servicePort = 8080
 )
 
 type Proxy struct{}
@@ -88,35 +89,18 @@ func initTracer() (func(context.Context) error, error) {
 func forwardRequest(req *http.Request) (*http.Response, time.Duration, error) {
 
         // Prepare the destination endpoint to forward the request to.
-        //proxyUrl := fmt.Sprintf("http://%s:%d%s", req.Host, servicePort, req.RequestURI)
         incUrl := fmt.Sprintf("http://%s%s", req.Host, req.RequestURI)
-
-        /*
-        u, _ := url.Parse(incUrl)
-        fmt.Println("full uri:", u.String())
-        fmt.Println("scheme:", u.Scheme)
-        fmt.Println("opaque:", u.Opaque)
-        fmt.Println("Host:", u.Host)
-        fmt.Println("Path", u.Path)
-        fmt.Println("Fragment", u.Fragment)
-        fmt.Println("RawQuery", u.RawQuery)
-        fmt.Printf("query: %#v", u.Query())
-        fmt.Printf("\n")
-        thost, tport, _ := net.SplitHostPort(req.Host)
-        urlsplit := strings.Split(u.String(), ":")
-        */
-
-
         intUrl := strings.Replace(incUrl, strconv.Itoa(proxyPort), strconv.Itoa(servicePort), 1)
 
-        // Print the original URL and the proxied request URL.
-        bodyBytes, err := io.ReadAll(req.Body)
+	// Print the original URL and the proxied request URL.
+        bodyBytes, err := ioutil.ReadAll(req.Body)
+        rdr1 := ioutil.NopCloser(bytes.NewBuffer(bodyBytes))
         bodyString := string(bodyBytes)
         log.Printf("\nIncoming URL: %s\nForward URL: %s\nMethod: %s\nBody: %s", incUrl, intUrl, req.Method, bodyString)
 
         // Create an HTTP client and a proxy request based on the original request.
         httpClient := http.Client{}
-        proxyReq, err := http.NewRequest(req.Method, intUrl, req.Body)
+        proxyReq, err := http.NewRequest(req.Method, intUrl, rdr1)
 
         // Capture the duration while making a request to the destination service.
         start := time.Now()
