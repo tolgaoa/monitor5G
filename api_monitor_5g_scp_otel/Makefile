@@ -6,6 +6,7 @@ clean:
 	rm -r bin/
 
 server:
+	cd ./cmd/
 	go mod tidy && go build -o ../bin/proxyserver cmd/main.go
 	go build -o bin/proxyserver cmd/main.go
 
