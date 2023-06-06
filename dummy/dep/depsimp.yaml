@@ -21,7 +21,8 @@ spec:
         runAsGroup: 0
       containers:
       - name: proxy
-        image: tolgaomeratalay/reverseproxy:v1.2
+        image: tolgaomeratalay/revprox:v1
+        imagePullPolicy: Always
         securityContext:
           capabilities:
             add:
